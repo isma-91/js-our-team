@@ -2,10 +2,10 @@
 Utilizzando i dati forniti, creare un array di oggetti per rappresentare i membri del team.
 Ogni membro è caratterizzato dalle seguenti informazioni: nome, ruolo e foto.
 
-MILESTONE 0:
+//MILESTONE 0:
 Creare l’array di oggetti con le informazioni fornite.
 
-MILESTONE 1:
+// MILESTONE 1:
 Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 
 MILESTONE 2:
@@ -31,3 +31,50 @@ Angela Lopez	Social Media Manager	angela-lopez-social-media-manager.jpg
 Scott Estrada	Developer	scott-estrada-developer.jpg
 Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 */
+const arrEmployees = [
+  {
+    name: "Wayne",
+    surname: "Barnett",
+    role: "Founder & CEO",
+    img: "wayne-barnett-founder-ceo.jpg",
+  },
+  {
+    name: "Angela",
+    surname: "Caroll",
+    role: "Chief Editor",
+    img: "angela-caroll-chief-editor.jpg",
+  },
+  {
+    name: "Walter",
+    surname: "Gordon",
+    role: "Office Manager",
+    img: "walter-gordon-office-manager.jpg",
+  },
+  {
+    name: "Angela",
+    surname: "Lopez",
+    role: "Social Media Manager",
+    img: "angela-lopez-social-media-manager.jpg",
+  },
+  {
+    name: "Scott",
+    surname: "Estrada",
+    role: "Developer",
+    img: "scott-estrada-developer.jpg",
+  },
+  {
+    name: "Barbara",
+    surname: "Ramos",
+    role: "Graphic Designer",
+    img: "barbara-ramos-graphic-designer.jpg",
+  },
+];
+
+//console.table(arrEmployees);
+
+for (let i = 0; i < arrEmployees.length; i++) {
+  //STAMPARE IN CONSOLE TUTTE LE INFO DI OGNUNO
+  // console.log(
+  //   `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role} ${arrEmployees[i].img}`
+  // );
+}
