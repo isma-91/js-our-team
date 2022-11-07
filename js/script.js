@@ -69,14 +69,7 @@ const arrEmployees = [
     img: "img/barbara-ramos-graphic-designer.jpg",
   },
 ];
-const arrImgs = [
-  "img/wayne-barnett-founder-ceo.jpg",
-  "angela-caroll-chief-editor.jpg",
-  "img/walter-gordon-office-manager.jpg",
-  "img/angela-lopez-social-media-manager.jpg",
-  "img/scott-estrada-developer.jpg",
-  "img/barbara-ramos-graphic-designer.jpg",
-];
+
 const eleContainer = document.querySelector(".container");
 
 //console.table(arrEmployees);
@@ -95,11 +88,17 @@ for (let i = 0; i < arrEmployees.length; i++) {
   eleContainer.append(eleCard);
   eleCard.innerHTML = `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role} ${arrEmployees[i].img}`;
   */
+  // Creo gli elementi div e img per fare le cards
   const eleCard = document.createElement("div");
   const profileImg = document.createElement("img");
   eleCard.classList.add("card");
+
+  //Indico cosa mettere dentro gli elementi img and div utilizzando l'indice del ciclo come numero per selezionare l'i esimo elemento sia per le img che per le info cosi da farle corrispondere e farle stampare sul DOM
   profileImg.src = arrEmployees[i].img;
-  eleCard.append(profileImg);
-  eleCard.innerHTML += `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role}`;
+  eleCard.innerHTML += `<p class = 'info'>${arrEmployees[i].name} ${arrEmployees[i].surname}</p> <p class = 'info job'>${arrEmployees[i].role}</p>`;
+
+  //Collego gli elementi creati al DOM
   eleContainer.append(eleCard);
+  eleCard.prepend(profileImg);
+  //Se voglio mettere in 'ordine' il JS devo usare il prepend sulle immagini così da dirgli di meterle 'prima' del testo, altrimenti potrei mettere queste 2 righe sopra al .innerHTML e .src corrispondenti e me li metteva bene anche utilizzando su tutti e 2 l'append. Però voglio lasciare così perchè mi sembra più ordinato e per provare anche il prepend che ho usato poco.
 }
