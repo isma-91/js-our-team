@@ -36,45 +36,70 @@ const arrEmployees = [
     name: "Wayne",
     surname: "Barnett",
     role: "Founder & CEO",
-    img: "wayne-barnett-founder-ceo.jpg",
+    img: "img/wayne-barnett-founder-ceo.jpg",
   },
   {
     name: "Angela",
     surname: "Caroll",
     role: "Chief Editor",
-    img: "angela-caroll-chief-editor.jpg",
+    img: "img/angela-caroll-chief-editor.jpg",
   },
   {
     name: "Walter",
     surname: "Gordon",
     role: "Office Manager",
-    img: "walter-gordon-office-manager.jpg",
+    img: "img/walter-gordon-office-manager.jpg",
   },
   {
     name: "Angela",
     surname: "Lopez",
     role: "Social Media Manager",
-    img: "angela-lopez-social-media-manager.jpg",
+    img: "img/angela-lopez-social-media-manager.jpg",
   },
   {
     name: "Scott",
     surname: "Estrada",
     role: "Developer",
-    img: "scott-estrada-developer.jpg",
+    img: "img/scott-estrada-developer.jpg",
   },
   {
     name: "Barbara",
     surname: "Ramos",
     role: "Graphic Designer",
-    img: "barbara-ramos-graphic-designer.jpg",
+    img: "img/barbara-ramos-graphic-designer.jpg",
   },
 ];
+const arrImgs = [
+  "img/wayne-barnett-founder-ceo.jpg",
+  "angela-caroll-chief-editor.jpg",
+  "img/walter-gordon-office-manager.jpg",
+  "img/angela-lopez-social-media-manager.jpg",
+  "img/scott-estrada-developer.jpg",
+  "img/barbara-ramos-graphic-designer.jpg",
+];
+const eleContainer = document.querySelector(".container");
 
 //console.table(arrEmployees);
 
 for (let i = 0; i < arrEmployees.length; i++) {
   //STAMPARE IN CONSOLE TUTTE LE INFO DI OGNUNO
-  // console.log(
-  //   `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role} ${arrEmployees[i].img}`
-  // );
+  /*
+  console.log(
+    `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role} ${arrEmployees[i].img}`
+  );
+  */
+
+  //STAMPARE SUL DOM TUTTE LE INFO DI OGNUNO
+  /*
+  const eleCard = document.createElement("div");
+  eleContainer.append(eleCard);
+  eleCard.innerHTML = `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role} ${arrEmployees[i].img}`;
+  */
+  const eleCard = document.createElement("div");
+  const profileImg = document.createElement("img");
+  eleCard.classList.add("card");
+  profileImg.src = arrEmployees[i].img;
+  eleCard.append(profileImg);
+  eleCard.innerHTML += `${arrEmployees[i].name} ${arrEmployees[i].surname} ${arrEmployees[i].role}`;
+  eleContainer.append(eleCard);
 }
